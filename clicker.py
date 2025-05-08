@@ -10,7 +10,6 @@ Y88b  d88P 888 888 Y88b.    888 "88b Y8b.     888          Y88b  d88P 888 888 Y8
  "Y8888P"  888 888  "Y8888P 888  888  "Y8888  888           "Y8888P"  888 888  "Y8888P 888  888  "Y8888  888     
                                                                                                                  
                                                                                                                  
-                                                                                                                 
 v0.1.1
 
 Github @JUST7LING
@@ -25,6 +24,13 @@ import threading
 import time
 import keyboard
 from PIL import Image, ImageTk
+
+def print_banner(file_path="./banner.txt"):
+    try:
+        with open(file_path, "r", encoding="utf-8") as f:
+            print(f.read())
+    except FileNotFoundError:
+        print("Clicker Clicker ... ")
 
 # GUI
 window = tkinter.Tk()
@@ -143,5 +149,8 @@ speed_label.place(x=350, y=315, width=40, height=50)
 alert_message_label = tkinter.Label(window, textvariable=alert_message, fg=alert_color)
 alert_message_label.place(x=50, y=315, width=250, height=40)
 
+
+# RUN
+print_banner()
 window.attributes("-topmost", True)
 window.mainloop()
