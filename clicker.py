@@ -11,7 +11,7 @@ Y88b  d88P 888 888 Y88b.    888 "88b Y8b.     888          Y88b  d88P 888 888 Y8
                                                                                                                  
                                                                                                                  
                                                                                                                  
-v0.1.0
+v0.1.1
 
 Github @JUST7LING
 https://nogotit.tistory.com
@@ -69,6 +69,7 @@ alert_message.set(init_alert)
 def locate():
     global x, y
     x, y = pyautogui.position()
+    alert(f"클릭 위치를 설정했습니다.\n좌표값 x={x}, y={y} 입니다.", False)
     
 def alert(message, is_warning):
     alert_message.set(message)
@@ -101,7 +102,7 @@ def speed_down():
 def stop():
     global continue_click
     continue_click = False
-    alert(init_alert)
+    alert(init_alert, False)
 
 def stop_trigger():
     keyboard.wait('esc')
